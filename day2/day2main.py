@@ -15,8 +15,12 @@ def simple_print(student_info):
     print(f"You are {student_info[1]} and in grade {student_info[2]}.")
     
 if __name__ == "__main__":
-some_array = ["some stuff", "multiple times", 1, 7]
-    
-    
-    student_info = student_intake()
-    simple_print(student_info)
+    student_info = []
+    while True:
+        student_info.append(student_intake())
+        another = input("Would you like to enter another student? (Y/N) ")
+        if another.lower() != 'y':
+            break
+
+    for student in student_info:
+        simple_print(student)
